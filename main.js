@@ -1,3 +1,4 @@
+import './style.css';
 import * as THREE from 'three';
 
 const scene = new THREE.Scene();
@@ -11,6 +12,11 @@ const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
+
+const donut_geo = new THREE.TorusGeometry(10, 3, 16, 100);
+const donut_tex = new THREE.MeshBasicMaterial({ color: 0xffffff });
+const donut = new THREE.Mesh(donut_geo, donut_tex);
+scene.add(donut);
 
 camera.position.z = 5;
 
